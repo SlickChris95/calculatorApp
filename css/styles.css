@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+h1 {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 3.5em; }
+
+.calc-box {
+  width: 400px;
+  height: 550px;
+  margin: 0 auto;
+  background-color: #2e3131; }
+  .calc-box .calc-text {
+    width: 400px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #383838;
+    position: relative; }
+    .calc-box .calc-text p {
+      color: white;
+      font-size: 3em;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: 10px; }
+  .calc-box .calc-buttons {
+    width: 350px;
+    margin: 20px auto 0 auto;
+    background-color: #2e3131;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .calc-box .calc-buttons #zero {
+      width: 160px;
+      border-radius: 40px; }
+      .calc-box .calc-buttons #zero button {
+        padding: 25px 40px; }
+    .calc-box .calc-buttons .btn {
+      width: 80px;
+      height: 80px;
+      border-radius: 80%;
+      background-color: #2F4F4F;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 1px;
+      -webkit-transition: background-color .4s;
+      transition: background-color .4s; }
+      .calc-box .calc-buttons .btn:hover {
+        background-color: #708090; }
+      .calc-box .calc-buttons .btn button {
+        background-color: transparent;
+        border: none;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        overflow: hidden;
+        padding: 15px;
+        color: white;
+        font-size: 25px; }
+      .calc-box .calc-buttons .btn button:focus {
+        outline: 0; }
+    .calc-box .calc-buttons .right-row {
+      background-color: #f9bf3b;
+      color: white;
+      -webkit-transition: background-color .4s;
+      transition: background-color .4s; }
+      .calc-box .calc-buttons .right-row button {
+        color: white; }
+      .calc-box .calc-buttons .right-row:hover {
+        background-color: #fcd670; }
+    .calc-box .calc-buttons .top-row {
+      background-color: #e4e9ed;
+      -webkit-transition: background-color .4s;
+      transition: background-color .4s; }
+      .calc-box .calc-buttons .top-row button {
+        color: black; }
+      .calc-box .calc-buttons .top-row:hover {
+        background-color: white; }
