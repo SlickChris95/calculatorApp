@@ -10,13 +10,13 @@ h1 {
 }
 
 
-.calc-box {
+#calc-box {
   width: 400px;
   height: 550px;
   margin: 0 auto;
   background-color:#2e3131;
 
-  .calc-text {
+  #calc-display {
     width: 400px;
     height: 100px;
     margin: 0 auto;
@@ -32,7 +32,7 @@ h1 {
 
     }
   }
-  .calc-buttons {
+  #calc-buttons {
     width: 350px;
     margin: 20px auto 0 auto;
     background-color: #2e3131;
@@ -96,3 +96,4 @@ h1 {
 
   }
 }
+.key--operator {}
