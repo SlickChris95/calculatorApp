@@ -18,7 +18,12 @@ h1 {
     height: 100px;
     margin: 0 auto;
     background-color: #383838;
-    position: relative; }
+    position: relative;
+    color: white;
+    font-size: 50px;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 10px; }
     #calc-box #calc-display p {
       color: white;
       font-size: 3em;
@@ -87,3 +92,7 @@ h1 {
         color: black; }
       #calc-box #calc-buttons .top-row:hover {
         background-color: white; }
+
+.is-depressed {
+  background-color: white;
+  border: 1px solid red; }

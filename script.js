@@ -6,38 +6,95 @@
 5. the clear key
 */
 
+/* Problem cases:
+1) user hits the decimal keys multiple times X
+2) user clicks on multiple operators
+3) user does an input such as 7 + 9 + 8 without clicking calculate
+
+
+*/
+
 var calculator = document.querySelector('#calc-box');
 var keys = calculator.querySelector('#calc-buttons');
+var display = document.querySelector('#calc-display');
 
 keys.addEventListener('click',function(e){
   if(e.target.matches('button')){
     var key = e.target;
     var action = key.dataset.action;
+    var keyContent = key.textContent
+    var displayedNum = display.textContent;
+    // concatenate the string if calc shows a non zero number
+
     if(!action){
-      console.log('number key!')
-    }
-    if(action === 'addition'|| action === 'subtraction' || action === 'multiplication'
-      || action === 'modulo' || action ==='division' ){
-        console.log('operator operator');
+      if(displayedNum === '0'){
+        display.textContent = keyContent;
+        console.log('test');
+      }else {
+        display.textContent = displayedNum + keyContent;
       }
-    if(action === 'clear'){
-      console.log('clear');
     }
-    if(action === 'negative'){
-      console.log('negative');
+
+    if(action === 'decimal'){
+      if(!display.textContent.includes('.'))
+        display.textContent = displayedNum + '.';
     }
+
+    if(action === 'addition'|| action === 'subtraction'||
+    action === 'multiplication'|| action === 'division' || action === 'modulo'){
+      key.classList.add('is-depressed'); // look into
+      calculator.dataset.firstvalue = displayedNum;
+      console.log(calculator.dataset.firstvalue)
+      calculator.dataset.operator = action;
+      console.log(calculator.dataset.operator)
+      display.textContent = " ";
+    }
+    // console.log(display.textContent);
     if(action === 'calculate'){
-      console.log('calculate');
+      var secondValue = displayedNum;
+      var firstvalue = calculator.dataset.firstvalue;
+      var operator = calculator.dataset.operator;
+      // if(firstvalue && operator)
+      display.textContent = (calculate(firstvalue,operator,secondValue));
     }
+
+    if(action === 'clear'){
+      display.textContent = "0";
+      firstvalue = 0;
+      secondValue = 0;
+      operator = " ";
+    }
+
+
   }
 });
 
 
+function calculate(num1,operator,num2){
+  var result = " ";
 
+  switch(operator){
+    case 'addition':
+      result = parseFloat(num1) + parseFloat(num2);
+      break;
+    case 'subtraction':
+      result = parseFloat(num1) - parseFloat(num2);
+      break;
+    case 'multiplication':
+      result = parseFloat(num1) * parseFloat(num2);
+      break;
+    case 'division':
+      result = parseFloat(num1) / parseFloat(num2);
+      break;
+    case 'modulo':
+      result = parseFloat(num1) % parseFloat(num2);
+      break;
+    default:
+      console.log('something went wrong');
+  }
+  return result;
 
-
-
-
+}
 
 
 

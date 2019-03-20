@@ -22,6 +22,12 @@ h1 {
     margin: 0 auto;
     background-color: #383838;
     position: relative;
+    color: white;
+    font-size: 50px;
+    text-align: right;
+    padding-top: 20px;
+    padding-right: 10px;
+
     p {
       color: white;
       font-size: 3em;
@@ -95,5 +101,9 @@ h1 {
     }
 
   }
+}
+.is-depressed{
+  background-color: white;
+  border: 1px solid red;
 }
 .key--operator {}
